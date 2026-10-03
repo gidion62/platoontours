@@ -1,0 +1,81 @@
+.faqItem {
+  border-bottom: 1px solid rgba(74, 63, 54, 0.15);
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.faqQ {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.1rem 0;
+  font-family: var(--font-lato), 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.plus {
+  color: var(--clay);
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.faqItem.open .plus {
+  transform: rotate(45deg);
+}
+
+.faqLanyardWrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+.faqLanyardWrap.open {
+  max-height: 520px;
+}
+.faqLanyardInner {
+  padding: 1.5rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lanyardString {
+  width: 3px;
+  height: 26px;
+  background: linear-gradient(to bottom, rgba(74, 63, 54, 0.15), var(--clay));
+}
+.lanyardClip {
+  width: 24px;
+  height: 14px;
+  background: linear-gradient(160deg, #d8d0c2, #9a9184);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 2;
+  margin-bottom: -2px;
+}
+.lanyardCard {
+  width: 100%;
+  max-width: 34rem;
+  background: var(--sand-50);
+  border-radius: 18px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 24px 44px rgba(74, 63, 54, 0.22);
+  transform-origin: top center;
+  cursor: grab;
+}
+.lanyardCard.dragging {
+  cursor: grabbing;
+}
+.lanyardCard p {
+  font-size: 0.94rem;
+  color: rgba(74, 63, 54, 0.75);
+  line-height: 1.7;
+  margin: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .faqLanyardWrap {
+    transition: none;
+  }
+}

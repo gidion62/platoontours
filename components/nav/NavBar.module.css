@@ -1,0 +1,108 @@
+/* ---- nav (shared across every page) ---- */
+.navWrap {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(94vw, 1180px);
+  z-index: 1000;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.6rem;
+  background: rgba(250, 247, 242, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(74, 63, 54, 0.08);
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(74, 63, 54, 0.12);
+}
+.logoMark {
+  height: 44px;
+  width: auto;
+  flex-shrink: 0;
+  display: inline-block;
+  object-fit: contain;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.menu {
+  display: none;
+  gap: 2rem;
+  font-size: 0.93rem;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--ink);
+  opacity: 0.75;
+  cursor: pointer;
+  font-weight: 500;
+}
+.menu a.active {
+  opacity: 1;
+  color: var(--clay);
+  font-weight: 700;
+}
+@media (min-width: 900px) {
+  .menu {
+    display: flex;
+  }
+}
+.ctaNav {
+  background: var(--ink);
+  color: var(--sand-50);
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (max-width: 899px) {
+  .ctaNav {
+    display: none;
+  }
+}
+
+/* ---- Mobile nav: hamburger ---- */
+.hamburgerBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+@media (min-width: 900px) {
+  .hamburgerBtn {
+    display: none;
+  }
+}
+.hamburgerBtn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin: 0 auto;
+}
+.hamburgerBtn.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburgerBtn.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburgerBtn.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}

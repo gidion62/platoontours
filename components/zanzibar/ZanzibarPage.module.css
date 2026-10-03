@@ -1,0 +1,85 @@
+.zbarRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: 2px;
+  overflow: hidden;
+}
+@media (min-width: 850px) {
+  .zbarRow {
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+  }
+  .zbarRow.reverse {
+    direction: rtl;
+  }
+  .zbarRow.reverse > * {
+    direction: ltr;
+  }
+}
+.zbarMedia {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+}
+.zbBg {
+  position: absolute;
+  inset: -10% -10%;
+  will-change: transform;
+}
+.zbPhoto {
+  position: absolute;
+  inset: -10% -10%;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  will-change: transform;
+}
+.zbarText {
+  background: var(--sand-50);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+}
+.zbarRow.even .zbarText {
+  background: var(--sand-100);
+}
+.zbEyebrow {
+  color: var(--clay);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.zbarText h3 {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.7rem;
+  margin: 0 0 0.9rem;
+  color: var(--ink);
+}
+.zbarText p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(74, 63, 54, 0.75);
+  margin: 0 0 1.4rem;
+}
+.zbCta {
+  align-self: flex-start;
+  background: var(--clay);
+  color: #fff;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: none;
+}
+.zbCta:hover {
+  transform: scale(1.03);
+}

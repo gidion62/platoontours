@@ -1,0 +1,88 @@
+.drawerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: rgba(20, 16, 12, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.drawerOverlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobileDrawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(80vw, 320px);
+  z-index: 401;
+  background: var(--sand-50);
+  box-shadow: -16px 0 40px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.4rem;
+}
+.mobileDrawer.open {
+  transform: translateX(0);
+}
+.mdHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.mdLogo {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.mdClose {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--sand-200);
+  border: none;
+  font-size: 1.1rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.mdLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.mdLinks a {
+  padding: 0.85rem 0.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(74, 63, 54, 0.1);
+  cursor: pointer;
+}
+.mdLinks a.active {
+  color: var(--clay);
+}
+.mdCta {
+  margin-top: auto;
+  background: var(--clay);
+  color: #fff;
+  text-align: center;
+  padding: 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobileDrawer,
+  .drawerOverlay {
+    transition: none;
+  }
+}

@@ -1,0 +1,208 @@
+.destHRig {
+  position: relative;
+}
+.destHStage {
+  position: sticky;
+  top: 88px;
+  height: calc(100vh - 88px);
+  overflow: hidden;
+}
+.destHTrack {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+.destHPanel {
+  flex: 0 0 100vw;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--sand-50);
+}
+.destHPanel.even {
+  background: var(--sand-100);
+}
+.destHPanelInner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+@media (min-width: 640px) {
+  .destHPanelInner {
+    gap: 3rem;
+    padding: 0 2.5rem;
+  }
+}
+@media (max-width: 640px) {
+  .destHPanelInner {
+    flex-direction: column-reverse;
+  }
+}
+
+.destHContent {
+  flex: 1.3;
+  min-width: 0;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.destHTagline {
+  color: var(--clay);
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+.destHSub {
+  margin-top: 1.1rem;
+}
+.destHSub h4 {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+}
+.destHSub p {
+  font-size: 0.9rem;
+}
+.destHPanel h2 {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: var(--ink);
+  font-size: clamp(1.5rem, 3.4vw, 2.3rem);
+  text-align: left;
+  margin: 0 0 0.9rem;
+}
+.destHPanel p {
+  color: rgba(74, 63, 54, 0.75);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.destHImages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (max-width: 640px) {
+  .destHImages {
+    flex-direction: row;
+  }
+}
+.destHImg {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: 0 20px 40px rgba(74, 63, 54, 0.22);
+  will-change: clip-path;
+}
+@media (max-width: 640px) {
+  .destHImg {
+    aspect-ratio: 1/1;
+    flex: 1;
+  }
+}
+
+.destHProgress {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 0.5rem;
+}
+.destHDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(74, 63, 54, 0.25);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.destHDot.active {
+  background: var(--clay);
+  transform: scale(1.3);
+}
+
+.testimonialSection {
+  background: var(--sand-200);
+}
+.testimonialGrid {
+  display: grid;
+  gap: 1.6rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 700px) {
+  .testimonialGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1000px) {
+  .testimonialGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.testimonialCard {
+  background: var(--sand-50);
+  border-radius: 16px;
+  padding: 1.8rem;
+}
+.tcHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.6rem;
+}
+.tcName {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: var(--ink);
+  font-size: 1rem;
+}
+.tcTime {
+  font-size: 0.78rem;
+  color: rgba(74, 63, 54, 0.5);
+}
+.tcTitle {
+  font-weight: 700;
+  color: var(--clay);
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+.testimonialCard p {
+  font-family: var(--font-lora), 'Lora', serif;
+  font-style: italic;
+  color: rgba(74, 63, 54, 0.78);
+  line-height: 1.65;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destHStage {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+  .destHTrack {
+    display: block;
+  }
+  .destHPanel {
+    min-height: 70vh;
+    padding: 3rem 0;
+  }
+  .destHImg {
+    clip-path: none !important;
+  }
+  .destHProgress {
+    display: none;
+  }
+}

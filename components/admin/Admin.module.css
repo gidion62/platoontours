@@ -1,0 +1,349 @@
+/* Deliberately plain/utilitarian — this is an internal tool, not a
+   marketing page, so it doesn't need the site's full editorial styling.
+   Still uses the shared color tokens (--ink, --clay, --sand-*) from
+   styles/globals.css so it doesn't look totally out of place, but uses a
+   plain system UI font stack instead of the site's Montserrat/Lato/Lora —
+   easier to scan in a table-heavy admin screen, and visually signals
+   "internal tool" rather than "marketing page". */
+
+.loginWrap,
+.dashWrap {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.loginWrap {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* The site nav (components/nav/NavBar.module.css) is `position: fixed`,
+     so it floats over page content rather than pushing it down — every
+     other page clears it with 5.5rem top padding (see the `section`
+     selector in styles/globals.css); this page needs the same to avoid
+     the nav overlapping "Platoon Tours Admin" / the password field. */
+  padding: 5.5rem 1.5rem 2rem;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border: 1px solid var(--sand-300);
+  border-radius: 14px;
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 18px 44px -20px rgba(74, 63, 54, 0.35);
+}
+
+.loginCard h1 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: var(--ink);
+}
+
+.loginSub {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(74, 63, 54, 0.65);
+}
+
+.loginCard label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.loginCard input {
+  padding: 0.7rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--sand-300);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.loginCard button {
+  margin-top: 0.5rem;
+  background: var(--clay);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.loginCard button:hover {
+  transform: scale(1.02);
+}
+
+.loginCard button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.loginError {
+  color: var(--clay-dark);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ---- dashboard ---- */
+
+.dashWrap {
+  max-width: 980px;
+  margin: 0 auto;
+  /* Same fixed-nav clearance as .loginWrap above. */
+  padding: 5.5rem 1.5rem 5rem;
+}
+
+.dashHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dashHeader h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--ink);
+}
+
+.dashSub {
+  margin: 0.25rem 0 0;
+  color: rgba(74, 63, 54, 0.65);
+  font-size: 0.92rem;
+}
+
+.logoutBtn {
+  background: transparent;
+  border: 1px solid var(--sand-300);
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--sand-300);
+  margin-bottom: 1.25rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 0.7rem 0.25rem;
+  margin-right: 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(74, 63, 54, 0.55);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tabActive {
+  color: var(--clay);
+  border-bottom-color: var(--clay);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filterChip {
+  background: var(--sand-100);
+  border: 1px solid var(--sand-300);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.filterChipActive {
+  background: var(--clay);
+  border-color: var(--clay);
+  color: #fff;
+}
+
+.empty {
+  color: rgba(74, 63, 54, 0.55);
+  font-size: 0.95rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--sand-300);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+}
+
+.cardMain {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.cardName {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cardEmail {
+  font-size: 0.82rem;
+  color: rgba(74, 63, 54, 0.6);
+}
+
+.cardPackage {
+  font-size: 0.78rem;
+  color: rgba(74, 63, 54, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 420px;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cardDate {
+  font-size: 0.78rem;
+  color: rgba(74, 63, 54, 0.5);
+  white-space: nowrap;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+.badge_new {
+  background: #e7f0ff;
+  color: #2f5fb3;
+}
+
+.badge_contacted {
+  background: #fff3d6;
+  color: #9a6b0a;
+}
+
+.badge_confirmed {
+  background: #e3f5e6;
+  color: #2c7a3e;
+}
+
+.badge_cancelled {
+  background: #f5e3e3;
+  color: #a33636;
+}
+
+.cardBody {
+  border-top: 1px solid var(--sand-200);
+  padding: 1.1rem 1.25rem 1.25rem;
+  background: var(--sand-50);
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.detailGrid strong,
+.cardBody > div > strong {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: rgba(74, 63, 54, 0.5);
+  margin-bottom: 0.2rem;
+}
+
+.detailGrid p,
+.messageText {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.messageText {
+  white-space: pre-wrap;
+  margin-bottom: 1rem;
+}
+
+.cardActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--sand-200);
+}
+
+.cardActions label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cardActions select {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--sand-300);
+  font-family: inherit;
+  text-transform: capitalize;
+}
+
+.deleteBtn {
+  background: none;
+  border: 1px solid var(--sand-300);
+  color: var(--clay-dark);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}

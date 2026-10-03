@@ -1,0 +1,42 @@
+.termsUpdated {
+  text-align: center;
+  color: rgba(74, 63, 54, 0.55);
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+  margin-bottom: 2.5rem;
+}
+.termsSection {
+  margin-bottom: 2rem;
+}
+.termsSection h3 {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--ink);
+  margin: 0 0 0.7rem;
+}
+.termsSection p {
+  font-size: 0.94rem;
+  color: rgba(74, 63, 54, 0.75);
+  line-height: 1.75;
+  margin: 0 0 0.8rem;
+}
+.termsSection ul {
+  margin: 0 0 0.8rem;
+  padding-left: 1.3rem;
+}
+.termsSection li {
+  font-size: 0.94rem;
+  color: rgba(74, 63, 54, 0.75);
+  line-height: 1.7;
+  margin-bottom: 0.4rem;
+}
+.termsNote {
+  background: var(--sand-100);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  font-size: 0.85rem;
+  color: rgba(74, 63, 54, 0.65);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}

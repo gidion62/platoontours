@@ -1,0 +1,161 @@
+/* ============================================================
+   Global design tokens + resets + shared utility classes.
+   These are intentionally NOT CSS Modules — .reveal, .fade-rise
+   etc. are used as generic utility classes across many different
+   page components, the same way Tailwind-style utilities would be,
+   so they stay global rather than being duplicated per module.
+   ============================================================ */
+
+:root {
+  --sand-50: #fff8ed;
+  --sand-100: #f5f1eb;
+  --sand-200: #ede2cc;
+  --sand-300: #ded1b6;
+  --sand-400: #d2cbbd;
+  --ink: #4a3f36;
+  --clay: #a3572e;
+  --clay-dark: #7d3f20;
+
+  /* Loaded via the Google Fonts <link> in app/layout.js — see the comment
+     there for why (matches the preview HTML's own loading method exactly).
+     Every *.module.css file reads these three variables, so retargeting
+     the fonts later (e.g. to the paid Druk Wide/Gotham) only needs a change
+     here plus the @font-face rules, nothing else. */
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-lato: 'Lato', sans-serif;
+  --font-lora: 'Lora', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--sand-50);
+  color: var(--ink);
+  font-family: var(--font-lato), 'Lato', sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.font-display {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.font-accent {
+  font-family: var(--font-lora), 'Lora', serif;
+  font-style: italic;
+}
+
+section {
+  padding: 5.5rem 1.5rem;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Shared "welcome paragraph" treatment used at the top of Safaris,
+   Destinations, Zanzibar, etc. (About has its own equivalent as a CSS
+   Module — components/about/AboutPage.module.css's .introBlock — styled to
+   match this on purpose). Each page can still override max-width inline;
+   this just guarantees the same centered look everywhere by default. */
+.intro-block {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.intro-block p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(74, 63, 54, 0.8);
+}
+
+h2 {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 2.6rem;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+h2.centered {
+  text-align: center;
+}
+
+/* ---- fade/rise-in-on-mount utility (hero, etc.) ---- */
+.fade-rise {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.d1 { animation-delay: 0.15s; }
+.d2 { animation-delay: 0.3s; }
+.d3 { animation-delay: 0.45s; }
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- scroll-reveal utility (IntersectionObserver-driven .in toggle) ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- falling entrance (drops in from above with a slight landing bounce) ----
+   Piggybacks on the same .reveal/.in IntersectionObserver toggle above — pair
+   the two classes on an element ("reveal fall-in") and this rule (declared
+   after .reveal, so it wins on the shared opacity/transform/transition
+   properties) swaps the plain rise-from-below for a drop-from-above instead. */
+.fall-in {
+  opacity: 0;
+  transform: translateY(-70px);
+  transition:
+    opacity 0.9s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.fall-in.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fall-in {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .fade-rise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .full-story {
+    max-height: none !important;
+  }
+}

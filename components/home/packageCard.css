@@ -1,0 +1,101 @@
+/* Package cards are injected into Swiper's own slide DOM via innerHTML
+   (see PackageCarousel.jsx) rather than rendered as JSX, because Swiper's
+   loop:true mode clones slide nodes internally — CSS Modules class hashing
+   wouldn't survive that, so these stay plain global classes, same as the
+   original vanilla build. */
+.card-fill {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+.k-package {
+  justify-content: flex-end;
+  padding: 1.3rem;
+}
+.k-package .pkg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.k-package .pkg-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.1) 55%, transparent 75%);
+  z-index: 0;
+}
+.k-package .pkg-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+.k-package .pkg-tag {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.28rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+.k-package .pkg-title {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin: 0 0 0.3rem;
+}
+.k-package .pkg-price {
+  font-family: var(--font-lora), 'Lora', serif;
+  font-style: italic;
+  color: #f0d9c4;
+  font-size: 0.88rem;
+}
+
+.mySwiper {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.mySwiper .swiper-wrapper {
+  /* force a constant, linear crawl instead of Swiper's default ease —
+     this is what makes the motion continuous rather than a stepped snap */
+  transition-timing-function: linear !important;
+}
+.mySwiper .swiper-slide {
+  /* 90mm x 120mm cards, scaling down responsively on narrow screens */
+  width: clamp(190px, 58vw, 90mm);
+  aspect-ratio: 3/4; /* 90mm : 120mm */
+  border-radius: 44px 44px 18px 18px / 12% 12% 18px 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -20px rgba(20, 15, 5, 0.4);
+  background: #141416;
+  transition: opacity 0.5s ease;
+}
+.mySwiper .swiper-slide-shadow-left,
+.mySwiper .swiper-slide-shadow-right {
+  display: none;
+}
+.mySwiper .swiper-slide {
+  opacity: 0.18;
+}
+.mySwiper .swiper-slide-active {
+  opacity: 1;
+  z-index: 10;
+}
+.mySwiper .swiper-slide-prev,
+.mySwiper .swiper-slide-next {
+  opacity: 0.55;
+  z-index: 5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mySwiper .swiper-wrapper {
+    transition: none !important;
+  }
+}

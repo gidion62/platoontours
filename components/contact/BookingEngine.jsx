@@ -2,21 +2,12 @@
 
 import { useState } from 'react';
 import styles from './ContactPage.module.css';
+import packageDetails from '@/lib/packages';
 
-// Package names offered in the "which safari" dropdown — the shorter,
-// currently-published subset from the original booking form. Ported as-is;
-// in the real data layer this should pull from lib/packages.js directly so
-// the two stay in sync automatically instead of by hand.
-const PACKAGE_NAMES = [
-  '7-Day Luxury Tanzania Safari with Serengeti Balloon Safari',
-  '6-Day Tanzania Safari + 5-Day Zanzibar Luxury Escape',
-  "5-Day Luxury Honeymoon Safari: Tanzania's Northern Circuit",
-  '6-Day Mid-Range Safari: The Great Calving Season',
-  '9-Day Safari: The Ultimate Mara River Crossing Experience',
-  '8-Day Tanzania Safari: Western Serengeti & Ngorongoro Crater',
-  '4-Day Tanzania Safari Express: Lake Manyara, Ngorongoro & Tarangire',
-  '2-Day Tanzania Safari Express: Tarangire & Ngorongoro Crater',
-];
+// Every package's title, pulled straight from lib/packages.js so the "which
+// safari" dropdown can never drift out of sync with the real package list
+// again — add a package there and it shows up here automatically.
+const PACKAGE_NAMES = Object.values(packageDetails).map((p) => p.title);
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const TIERS = ['Budget', 'Mid-range', 'Luxury'];

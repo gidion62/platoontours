@@ -14,6 +14,12 @@ export default function HomePage() {
   return (
     <div className="page" data-page="home">
       <RevealOnMount />
+      {/* Preload the hero poster/video so the browser fetches them immediately,
+          in parallel with everything else, instead of waiting until the <video>
+          tag is parsed — this is what closes the visible gap where the
+          .heroBg gradient shows before the real hero paints. */}
+      <link rel="preload" as="image" href="/images/hero-poster.jpg" />
+      <link rel="preload" as="video" href="/videos/hero.mp4" type="video/mp4" />
 
       <section className={styles.hero}>
         <div className={styles.heroBg} />

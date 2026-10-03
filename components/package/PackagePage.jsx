@@ -9,6 +9,10 @@ export default function PackagePage({ data, slug }) {
   return (
     <div className="page" data-page="package">
       <PackageSchema data={d} slug={slug} />
+      {/* Preload the cover photo so the browser starts fetching it immediately,
+          instead of waiting until this point in the page to request it — closes
+          the gap where the plain background color shows before the photo paints. */}
+      <link rel="preload" as="image" href={`/images/packages/${slug}-detail.jpg`} />
       <header className={styles.pkgHero}>
         <p className={styles.pkgDuration}>{d.duration}</p>
         {/* TODO: swap this h1 for the MaskedHeading reveal treatment used on other headings once that engine is ported (see components/shared/MaskedHeading) */}

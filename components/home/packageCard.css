@@ -69,9 +69,10 @@
   transition-timing-function: linear !important;
 }
 .mySwiper .swiper-slide {
-  /* 90mm x 120mm cards, scaling down responsively on narrow screens */
-  width: clamp(190px, 58vw, 90mm);
-  aspect-ratio: 3/4; /* 90mm : 120mm */
+  /* ~100mm x 133mm cards, scaling down responsively on narrow screens —
+     bumped up from the original 90mm x 120mm for better visibility */
+  width: clamp(210px, 62vw, 100mm);
+  aspect-ratio: 3/4; /* 100mm : 133mm */
   border-radius: 44px 44px 18px 18px / 12% 12% 18px 18px;
   overflow: hidden;
   box-shadow: 0 30px 60px -20px rgba(20, 15, 5, 0.4);

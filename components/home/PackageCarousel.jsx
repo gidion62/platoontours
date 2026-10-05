@@ -28,7 +28,7 @@ const CARD_DATA = [
   { title: '3-Day Tanzania Safari Express: Tarangire & Ngorongoro Crater', price: 'From $1,100', special: false, tint1: '#5c3d2f', tint2: '#1e130e', slug: '3-day-express-tarangire-ngorongoro' },
   { title: '2-Day Tanzania Safari Express: Tarangire & Ngorongoro Crater', price: 'From $900', special: false, tint1: '#3d5c56', tint2: '#12201e', slug: '2-day-express-tarangire-ngorongoro' },
   { title: '10 Days - Tarangire, Lake Manyara, Lake Natron, Serengeti, Ngorongoro Crater, and Lake Eyasi', price: 'From $4,500', special: false, tint1: '#7d3f20', tint2: '#2a1c12', slug: '10-days-tarangire-lake-manyara-lake-natron-serengeti-ngorongoro-crater-and-lake-eyasi' },
-  { title: '5 Days - Lake Manyara, Ngorongoro Crater, Serengeti (2 nights), and Tarangire', price: 'From $1,500', special: false, tint1: '#3a5a6e', tint2: '#12242c', slug: '5-days-lake-manyara-ngorongoro-crater-serengeti-2-nights-and-tarangire' },
+  { title: '5 Days - Lake Manyara, Ngorongoro Crater, Serengeti (2 nights), and Tarangire', price: 'From $1,900', special: false, tint1: '#3a5a6e', tint2: '#12242c', slug: '5-days-lake-manyara-ngorongoro-crater-serengeti-2-nights-and-tarangire' },
   { title: '6 Days - Tarangire, Serengeti and Ngorongoro Crater', price: 'From $1,800', special: false, tint1: '#3d5c42', tint2: '#12201a', slug: '6-days-tarangire-serengeti-and-ngorongoro-crater' },
 ];
 

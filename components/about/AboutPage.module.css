@@ -1,12 +1,60 @@
+/* ---- camouflage page backdrop ----
+   The page's own camo tile repeated small across the whole page, washed with
+   the original sand tone so it stays a subtle camouflage; text sits on cream
+   panels for readability. Remove .camoPage's ::before (and the panel rules
+   marked below) to switch it off. */
+.camoPage {
+  position: relative;
+  isolation: isolate;
+}
+.camoPage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(237, 226, 204, 0.76), rgba(237, 226, 204, 0.76)),
+    url(/images/home/camo-tile.jpg) center top / 221px auto repeat;
+}
+@media (max-width: 820px) {
+  .camoPage::before {
+    background-size: 162px auto;
+  }
+}
+/* the shared page header sits on the camo too, title on a cream plate */
+.camoPage > header {
+  background: transparent;
+}
+.camoPage > header h1 {
+  display: table;
+  margin: 0 auto;
+  padding: 0.4rem 1.6rem;
+  background: rgba(250, 246, 238, 0.94);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(40, 45, 30, 0.22);
+}
+@media (max-width: 820px) {
+  .camoPage > header h1 {
+    font-size: 2.3rem;
+    padding: 0.35rem 1.2rem;
+  }
+}
+
 .introBlock {
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
+  background: rgba(250, 246, 238, 0.94);
+  border-radius: 20px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 10px 28px rgba(40, 45, 30, 0.22);
 }
 .introBlock p {
   font-size: 1.05rem;
   line-height: 1.7;
-  color: rgba(74, 63, 54, 0.8);
+  color: var(--ink);
+  font-weight: 500;
 }
 .storyToggle {
   margin-top: 1.2rem;
@@ -36,13 +84,26 @@
 .fullStory.open {
   max-height: 4000px;
 }
+.fullStory.open {
+  margin-top: 1.6rem;
+}
 .fullStoryInner {
-  padding-top: 2.5rem;
+  max-width: 860px;
+  padding: 2.2rem 2rem 1.4rem;
+  background: rgba(250, 246, 238, 0.94);
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(40, 45, 30, 0.22);
+}
+@media (max-width: 600px) {
+  .fullStoryInner {
+    padding: 1.6rem 1.2rem 1rem;
+  }
 }
 .fullStory p {
   font-size: 1rem;
   line-height: 1.75;
-  color: rgba(74, 63, 54, 0.75);
+  color: var(--ink);
+  font-weight: 500;
   margin: 0 0 1.2rem;
 }
 .fullStory h3 {
@@ -61,7 +122,8 @@
 }
 .skillList li {
   font-size: 0.98rem;
-  color: rgba(74, 63, 54, 0.78);
+  color: var(--ink);
+  font-weight: 500;
   line-height: 1.6;
   padding-left: 1.4rem;
   position: relative;
@@ -102,47 +164,71 @@
   margin: 0 0 0.4rem;
 }
 .apartItem p {
-  font-size: 0.92rem;
-  color: rgba(74, 63, 54, 0.65);
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 500;
   line-height: 1.6;
   margin: 0;
 }
 .missionBlock {
-  background: var(--sand-200);
+  background: transparent;
   text-align: center;
+}
+.missionBlock > div {
+  max-width: 760px;
+  padding: 2.2rem 1.8rem;
+  background: rgba(250, 246, 238, 0.94);
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(40, 45, 30, 0.22);
 }
 .missionBlock p {
   max-width: 640px;
   margin: 0 auto;
   font-size: 1.05rem;
   line-height: 1.75;
-  color: rgba(74, 63, 54, 0.8);
+  color: var(--ink);
+  font-weight: 500;
 }
 .joinBlock {
-  background: linear-gradient(160deg, #7d3f20, #3d2e0e);
+  background: transparent;
   text-align: center;
 }
+.joinBlock > div {
+  max-width: 760px;
+  padding: 2.2rem 1.8rem;
+  background: rgba(250, 246, 238, 0.94);
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(40, 45, 30, 0.22);
+}
 .joinBlock h2 {
-  color: var(--sand-50);
+  color: var(--ink);
 }
 .joinBlock p {
-  color: rgba(255, 248, 237, 0.8);
+  color: var(--ink);
+  font-weight: 500;
   max-width: 640px;
   margin: 0 auto;
   font-size: 1.05rem;
   line-height: 1.75;
 }
 .joinAccent {
-  color: #e8c9a3;
+  color: var(--clay);
   font-size: 1.15rem;
   display: block;
   margin-top: 1.4rem;
 }
 .partnersLine {
+  display: table;
+  max-width: calc(100% - 3rem);
+  margin: 2.5rem auto 5rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: rgba(74, 63, 54, 0.6);
-  padding: 0 1.5rem 5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 0.9rem 1.5rem;
+  background: rgba(250, 246, 238, 0.94);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(40, 45, 30, 0.2);
 }
 .partnersLine a {
   color: var(--clay);

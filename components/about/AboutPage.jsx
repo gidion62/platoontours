@@ -10,7 +10,7 @@ export default function AboutPage() {
   useScrollReveal();
 
   return (
-    <div className="page" data-page="about">
+    <div className={`page ${styles.camoPage}`} data-page="about">
       <PageHeader title="About Us" />
 
       <section>
@@ -117,8 +117,8 @@ export default function AboutPage() {
         Platoon Tours is a proud partner of{' '}
         <a href="https://www.africa-safaris.com/" target="_blank" rel="noopener noreferrer">
           Africa Safaris
-        </a>{' '}
-        and{' '}
+        </a>
+        {'\u00a0and\u00a0'}
         <a href="https://nomiddlemantours.com/tour-operators/platoon-tours" target="_blank" rel="noopener noreferrer">
           No Middleman Tours
         </a>

@@ -70,7 +70,7 @@ export default function HomePage() {
 
       <section className={styles.trustSection}>
         <div className="section-inner reveal">
-          <h2>What guests are saying</h2>
+          <h2 className={styles.trustHeading}>What guests are saying</h2>
           <div className={styles.trustGrid}>
             <div className={styles.trustCard}>
               <div className={styles.stars}>★★★★★</div>

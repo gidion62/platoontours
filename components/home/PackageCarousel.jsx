@@ -9,7 +9,7 @@ import styles from './HomePage.module.css';
 import 'swiper/css/bundle';
 import './packageCard.css';
 
-// The 15-package set for the homepage's Swiper CoverFlow carousel — kept in
+// The 17-package set for the homepage's Swiper CoverFlow carousel — kept in
 // sync manually with lib/packages.js (see the comment on that file / on
 // BookingEngine.jsx's PACKAGE_NAMES for the same tradeoff).
 const CARD_DATA = [
@@ -19,8 +19,10 @@ const CARD_DATA = [
   { title: '6-Day Mid-Range Safari: The Great Calving Season', price: 'From $2,800', special: true, tint1: '#3d5c42', tint2: '#12201a', slug: '6-day-mid-range-safari-the-great-calving-season' },
   { title: '9-Day Safari: The Ultimate Mara River Crossing Experience', price: 'From $2,500', special: true, tint1: '#3a5a6e', tint2: '#12242c', slug: '9-day-safari-the-ultimate-mara-river-crossing-experience' },
   { title: '9-Day Tanzania Safari Express: Lake Manyara, Lake Natron, Serengeti, Ngorongoro & Tarangire', price: 'From $3,600', special: false, tint1: '#6e3550', tint2: '#2a1420', slug: '9-day-tanzania-safari-express-lake-manyara-lake-natron-serengeti-ngorongoro-tarangire' },
+  { title: '7-Day Wild South Safari: Nyerere & Ruaha', price: 'From $4,600', special: false, tint1: '#3d5c42', tint2: '#12201a', slug: '7-day-wild-south-safari-nyerere-ruaha' },
   { title: '8-Day Tanzania Safari Express: Arusha National Park, Lake Manyara, Serengeti, Ngorongoro & Tarangire', price: 'From $2,600', special: false, tint1: '#6e5a35', tint2: '#241d0e', slug: '8-day-tanzania-safari-express-arusha-national-park-lake-manyara-serengeti-ngorongoro-tarangire' },
   { title: '7-Day Tanzania Safari Express: Lake Manyara, Serengeti, Ngorongoro & Tarangire', price: 'From $2,200', special: false, tint1: '#4a4a4a', tint2: '#161616', slug: '7-day-express-lake-manyara-serengeti-ngorongoro-tarangire' },
+  { title: '7-Day Southern Tanzania Safari: Nyerere, Mikumi & Udzungwa', price: 'From $3,700', special: false, tint1: '#6e5a35', tint2: '#241d0e', slug: '7-day-southern-tanzania-safari-nyerere-mikumi-udzungwa' },
   { title: '8-Day Tanzania Safari: Western Serengeti & Ngorongoro Crater', price: 'From $2,900', special: false, tint1: '#4a4a4a', tint2: '#161616', slug: '8-day-tanzania-safari-western-serengeti-ngorongoro-crater' },
   { title: '4-Day Tanzania Safari Express: Lake Manyara, Ngorongoro & Tarangire', price: 'From $1,350', special: false, tint1: '#5c3d2f', tint2: '#1e130e', slug: '4-day-express-lake-manyara-ngorongoro-tarangire' },
   { title: '3-Day Tanzania Safari Express: Tarangire & Ngorongoro Crater', price: 'From $1,100', special: false, tint1: '#5c3d2f', tint2: '#1e130e', slug: '3-day-express-tarangire-ngorongoro' },

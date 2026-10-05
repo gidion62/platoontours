@@ -100,6 +100,18 @@ export default function CinematicSection() {
       band(caldera, s, 1880, 2200, 2550, 2780, 'x');
       band(why, s, 2780, 3150);
 
+      // Phones only: the "What sets us apart" box scrolls internally (its
+      // content is taller than the screen). While it was still invisible
+      // (fading in) it was already catching swipes and scrolling its own text,
+      // so by the time it appeared the heading had scrolled out of sight.
+      // Keep it inert and reset to the top until it's fully visible; once
+      // it is, it scrolls normally. Desktop never enters this branch.
+      if (why && window.matchMedia('(max-width: 820px)').matches) {
+        const whyOpacity = parseFloat(why.style.opacity) || 0;
+        why.style.pointerEvents = whyOpacity < 0.98 ? 'none' : 'auto';
+        if (whyOpacity < 0.02) why.scrollTop = 0;
+      }
+
       // The bridge: as the Migration photo at the right edge approaches its
       // own exit, it leads the handoff — sliding further right, lifting,
       // and scaling up, as if about to become the next scene. The Caldera
@@ -127,6 +139,9 @@ export default function CinematicSection() {
         <div className={styles.cineBg} />
 
         <div className={styles.cineMoment} ref={introRef}>
+          {/* Camo test layer — fades in/out with this moment only. Remove this
+              line (and the .cineCamo CSS) to switch it off. */}
+          <div className={styles.cineCamo} aria-hidden="true" />
           {/* TODO: swap for the MaskedHeading reveal treatment once that engine is ported */}
           <h2 className="font-display reveal fall-in">Founded on the frontline of adventure.</h2>
           <p>

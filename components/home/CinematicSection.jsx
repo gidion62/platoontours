@@ -139,6 +139,10 @@ export default function CinematicSection() {
         </div>
 
         <div className={styles.cineMoment} ref={migrationRef}>
+          {/* .cineCollage is display:contents on desktop (no box, so the photos
+              below keep positioning against .cineMoment exactly as before) and
+              becomes a fanned row of polaroids on phones. */}
+          <div className={styles.cineCollage}>
           <div className={styles.cinePhoto} style={{ top: '-8%', left: '-16%', width: 165, transform: 'rotate(-9deg)', background: 'linear-gradient(150deg,#c9a25a,#5a3d1a)' }}>
             <Tile src="/images/home/migration-plains.jpg" alt="Endless plains of the Serengeti" />
             <span>Endless plains</span>
@@ -159,6 +163,7 @@ export default function CinematicSection() {
             <Tile src="/images/home/migration-river-crossing.jpg" alt="Wildebeest river crossing" />
             <span>River crossing</span>
           </div>
+          </div>
 
           <div className={styles.cineGiantStat}>
             <span className={styles.cineGiantNum}>1.5M+</span>
@@ -173,6 +178,7 @@ export default function CinematicSection() {
         </div>
 
         <div className={styles.cineMoment} ref={calderaRef}>
+          <div className={styles.cineCollage}>
           <div
             className={`${styles.cinePhoto} ${styles.cinePhotoEdge}`}
             ref={calEdgeRef}
@@ -189,9 +195,13 @@ export default function CinematicSection() {
             <Tile src="/images/home/caldera-floor.jpg" alt="Ngorongoro Crater floor" />
             <span>The caldera floor</span>
           </div>
-          <div className={styles.cinePhoto} style={{ bottom: '-24%', right: '-30%', width: 140, transform: 'rotate(4deg)', background: 'linear-gradient(150deg,#5c7a5f,#1c2f1f)' }}>
+          {/* cineHideMobile: this photo file isn't in /public/images/home yet, so
+              on phones it's skipped rather than shown as a bare gradient tile.
+              Remove that class once caldera-flamingo-lake.jpg is added. */}
+          <div className={`${styles.cinePhoto} ${styles.cineHideMobile}`} style={{ bottom: '-24%', right: '-30%', width: 140, transform: 'rotate(4deg)', background: 'linear-gradient(150deg,#5c7a5f,#1c2f1f)' }}>
             <Tile src="/images/home/caldera-flamingo-lake.jpg" alt="Flamingos on Lake Magadi" />
             <span>Flamingo lake</span>
+          </div>
           </div>
 
           <p className={`${styles.cineHook} font-accent`}>Visit the Greatest Caldera</p>

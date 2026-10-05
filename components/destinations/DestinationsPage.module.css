@@ -39,9 +39,18 @@
     padding: 0 2.5rem;
   }
 }
+/* Phones: the pinned frame is only ~100vh tall, and the full text alone
+   filled it, so the two photos were pushed out of view. Fix: fill the frame
+   exactly, photos as a compact banner on top, text below taking the
+   remaining height (and scrolling inside it if it's long). */
 @media (max-width: 640px) {
   .destHPanelInner {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    height: 100%;
+    padding: 0.9rem 1.5rem 2.8rem;
   }
 }
 
@@ -51,6 +60,14 @@
   max-height: 80vh;
   overflow-y: auto;
   padding-right: 0.5rem;
+}
+@media (max-width: 640px) {
+  .destHContent {
+    flex: 1 1 0;
+    min-height: 0;
+    max-height: none;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 .destHTagline {
   color: var(--clay);
@@ -94,6 +111,9 @@
 @media (max-width: 640px) {
   .destHImages {
     flex-direction: row;
+    order: -1;
+    flex: 0 0 auto;
+    gap: 0.6rem;
   }
 }
 .destHImg {
@@ -106,8 +126,9 @@
 }
 @media (max-width: 640px) {
   .destHImg {
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/3;
     flex: 1;
+    min-width: 0;
   }
 }
 

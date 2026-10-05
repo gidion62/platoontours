@@ -48,9 +48,14 @@ export default function DestinationsPage() {
 
       track.style.transform = `translateX(${-trackProgress * 100}vw)`;
 
+      // On phones the two photos sit side by side, so the second one's delayed
+      // wipe would leave it ~12% cut off whenever a destination is centered.
+      // No stagger there; desktop keeps the original staggered timing.
+      const narrow = window.matchMedia('(max-width: 640px)').matches;
+
       imagePairs.forEach((pair, i) => {
         pair.forEach((el, imgIdx) => {
-          const stagger = imgIdx * 0.12;
+          const stagger = narrow ? 0 : imgIdx * 0.12;
           const local = clamp01(trackProgress - (i - 1) - stagger);
           el.style.clipPath = `inset(0 ${(1 - local) * 100}% 0 0)`;
         });

@@ -13,7 +13,7 @@ import './packageCard.css';
 // sync manually with lib/packages.js (see the comment on that file / on
 // BookingEngine.jsx's PACKAGE_NAMES for the same tradeoff).
 const CARD_DATA = [
-  { title: '7-Day Luxury Tanzania Safari with Serengeti Balloon Safari', price: 'From $3,700', special: true, tint1: '#8a6a2f', tint2: '#241d0e', slug: '7-day-luxury-tanzania-safari-with-serengeti-balloon-safari' },
+  { title: 'Balloon Safari: 7-Day Luxury Tanzania Safari in the Serengeti', price: 'From $3,700', special: true, tint1: '#8a6a2f', tint2: '#241d0e', slug: '7-day-luxury-tanzania-safari-with-serengeti-balloon-safari' },
   { title: '6-Day Tanzania Safari + 5-Day Zanzibar Luxury Escape', price: 'From $3,400', special: true, tint1: '#3a5a6e', tint2: '#12242c', slug: '6-day-tanzania-safari-5-day-zanzibar-luxury-escape' },
   { title: "5-Day Luxury Honeymoon Safari: Tanzania's Northern Circuit", price: 'From $2,400', special: true, tint1: '#6e3550', tint2: '#2a1420', slug: '5-day-luxury-honeymoon-safari-tanzanias-northern-circuit' },
   { title: '6-Day Mid-Range Safari: The Great Calving Season', price: 'From $2,800', special: true, tint1: '#3d5c42', tint2: '#12201a', slug: '6-day-mid-range-safari-the-great-calving-season' },

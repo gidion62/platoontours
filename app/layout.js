@@ -33,6 +33,9 @@ export const metadata = {
     template: '%s | Platoon Tours',
   },
   description: DEFAULT_DESCRIPTION,
+  verification: {
+    google: 'rrwTsMZCjEGBtk_RdkKiFmJ_WBKE2KJS2wv0AVWTubE',
+  },
   openGraph: {
     type: 'website',
     siteName: 'Platoon Tours',

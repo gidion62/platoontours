@@ -9,7 +9,7 @@ const SLIDES = [
   { src: '/images/home/migration-on-the-move.jpg', alt: 'Wildebeest leaping across the Mara River' },
   { src: '/images/home/caldera-big-five.jpg', alt: 'Lion pride resting on a fallen tree' },
   { src: '/images/destinations/ngorongoro.jpg', alt: 'Black rhino in the Ngorongoro Crater' },
-  { src: '/images/home/migration-river-crossing.jpg', alt: 'Zebra herd at a river crossing' },
+  { src: '/images/home/safari-vehicle-topi.jpg', alt: 'Safari vehicle with topi antelope on the savannah' },
 ];
 
 const SECONDS_PER_SLIDE = 5; // must match the keyframe math in HomePage.module.css

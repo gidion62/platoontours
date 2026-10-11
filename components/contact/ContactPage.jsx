@@ -41,8 +41,8 @@ export default function ContactPage() {
               <div className={styles.ciIcon}>✉</div>
               <div>
                 <div className={styles.ciLabel}>Email us</div>
-                <a className={styles.ciValue} href="mailto:info@platoon-tours.com">
-                  info@platoon-tours.com
+                <a className={styles.ciValue} href="mailto:info@platoontours.com">
+                  info@platoontours.com
                 </a>
               </div>
             </div>

@@ -36,8 +36,8 @@ export default function TermsPage() {
             <h3>9. Contact</h3>
             <p>
               Questions about these terms can be sent to{' '}
-              <a href="mailto:info@platoon-tours.com" style={{ color: 'var(--clay)', fontWeight: 700 }}>
-                info@platoon-tours.com
+              <a href="mailto:info@platoontours.com" style={{ color: 'var(--clay)', fontWeight: 700 }}>
+                info@platoontours.com
               </a>{' '}
               or via the contact page.
             </p>

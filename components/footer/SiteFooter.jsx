@@ -87,7 +87,7 @@ export default function SiteFooter() {
           </div>
           <div>
             <h5>Email Us</h5>
-            <p>info@platoon-tours.com</p>
+            <p>info@platoontours.com</p>
           </div>
         </div>
         <div className={styles.footContactItem}>

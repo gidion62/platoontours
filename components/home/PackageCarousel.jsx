@@ -38,10 +38,9 @@ const CARD_DATA = [
 // leaving the tint gradient (still set as this card's own background)
 // showing through — see IMAGE-GUIDE.md for the full file list.
 function cardMarkup(d) {
-  const bg = `linear-gradient(160deg,${d.tint1},${d.tint2})`;
   return `
-    <div class="card-fill k-package" data-slug="${d.slug || ''}" style="background:${bg}; cursor:${d.slug ? 'pointer' : 'default'};">
-      <img class="pkg-img" src="/images/packages/${d.slug}.jpg" alt="${d.title}" loading="lazy" onerror="this.style.display='none'" />
+    <div class="card-fill k-package" data-slug="${d.slug || ''}" style="cursor:${d.slug ? 'pointer' : 'default'};">
+      <img class="pkg-img" src="/images/packages/${d.slug}.jpg" alt="${d.title}" loading="lazy" onload="this.setAttribute('data-ready','true')" onerror="this.style.display='none';this.setAttribute('data-ready','true')" />
       <div class="pkg-shade"></div>
       <div class="pkg-content">
         ${d.special ? '<span class="pkg-tag">Special</span>' : ''}

@@ -21,6 +21,10 @@
   object-fit: cover;
   z-index: 0;
 }
+.k-package .pkg-img:not([data-ready]) ~ .pkg-shade,
+.k-package .pkg-img:not([data-ready]) ~ .pkg-content {
+  opacity: 0;
+}
 .k-package .pkg-shade {
   position: absolute;
   inset: 0;
@@ -78,6 +82,11 @@
   box-shadow: 0 30px 60px -20px rgba(20, 15, 5, 0.4);
   background: #141416;
   transition: opacity 0.5s ease;
+}
+.mySwiper .swiper-slide:has(.pkg-img:not([data-ready])) {
+  /* no dark placeholder card while the photo is still loading */
+  background: transparent;
+  box-shadow: none;
 }
 .mySwiper .swiper-slide-shadow-left,
 .mySwiper .swiper-slide-shadow-right {

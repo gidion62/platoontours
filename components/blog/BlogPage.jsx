@@ -19,7 +19,7 @@ export default function BlogPage() {
               className={styles.bfMedia}
               style={{
                 background: featured.slug
-                  ? `url(/images/home/blog-${featured.slug}.jpg) center/cover no-repeat, linear-gradient(150deg, ${featured.grad[0]}, ${featured.grad[1]})`
+                  ? `url(/images/home/blog-${featured.slug}.jpg) center/cover no-repeat`
                   : `linear-gradient(150deg, ${featured.grad[0]}, ${featured.grad[1]})`,
               }}
             />

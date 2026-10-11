@@ -59,7 +59,7 @@ function CardFolder({ post, index, openIndex, setOpenIndex }) {
           className={styles.cfFaceCut}
           style={{
             background: post.slug
-              ? `url(/images/home/blog-${post.slug}.jpg) center/cover no-repeat, linear-gradient(150deg, ${post.grad[0]}, ${post.grad[1]})`
+              ? `url(/images/home/blog-${post.slug}.jpg) center/cover no-repeat`
               : `linear-gradient(150deg, ${post.grad[0]}, ${post.grad[1]})`,
           }}
         />

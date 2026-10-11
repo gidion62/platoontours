@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import styles from './HomePage.module.css';
+import FallbackImage from '@/components/shared/FallbackImage';
 
 // `img` names the file under /public/images/destinations/ — drop e.g.
 // serengeti.jpg in there and this panel picks it up automatically (the
-// `grad` gradient stays as a fallback if the file isn't there yet).
+// photo simply stays hidden if the file isn't there yet).
 const ITEMS = [
   { name: 'Serengeti National Park', img: 'serengeti', grad: ['#7a6a2f', '#241d0e'] },
   { name: 'Ngorongoro Crater', img: 'ngorongoro', grad: ['#3d5c42', '#12201a'] },
@@ -28,19 +29,14 @@ export default function DestGallery() {
           key={item.name}
           className={`${styles.destPanel} ${i === active ? styles.active : ''}`}
           style={{
-            background: `linear-gradient(150deg, ${item.grad[0]}, ${item.grad[1]})`,
             flexBasis: `${(i === active ? EXPAND_RATIO : otherShare) * 100}%`,
           }}
           onMouseEnter={() => setActive(i)}
         >
-          <img
+          <FallbackImage
             className={styles.destPanelImg}
             src={`/images/destinations/${item.img}.jpg`}
             alt={item.name}
-            loading="lazy"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
           />
           <div className={styles.shade} />
           <span className={styles.label}>{item.name}</span>

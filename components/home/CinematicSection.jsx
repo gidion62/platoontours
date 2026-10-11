@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import styles from './HomePage.module.css';
 import useScrollReveal from '@/components/shared/useScrollReveal';
+import FallbackImage from '@/components/shared/FallbackImage';
 
 // Each polaroid tile below still carries its original CSS-gradient
 // `background` as a fallback — the <img> just layers on top of it. Drop
@@ -20,15 +21,7 @@ import useScrollReveal from '@/components/shared/useScrollReveal';
 function Tile({ src, alt }) {
   return (
     <>
-      <img
-        className={styles.cinePhotoImg}
-        src={src}
-        alt={alt}
-        loading="lazy"
-        onError={(e) => {
-          e.currentTarget.style.display = 'none';
-        }}
-      />
+      <FallbackImage className={styles.cinePhotoImg} src={src} alt={alt} />
       <div className={styles.cinePhotoShade} />
     </>
   );
@@ -158,22 +151,22 @@ export default function CinematicSection() {
               below keep positioning against .cineMoment exactly as before) and
               becomes a fanned row of polaroids on phones. */}
           <div className={styles.cineCollage}>
-          <div className={styles.cinePhoto} style={{ top: '-8%', left: '-16%', width: 165, transform: 'rotate(-9deg)', background: 'linear-gradient(150deg,#c9a25a,#5a3d1a)' }}>
+          <div className={styles.cinePhoto} style={{ top: '-8%', left: '-16%', width: 165, transform: 'rotate(-9deg)' }}>
             <Tile src="/images/home/migration-plains.jpg" alt="Endless plains of the Serengeti" />
             <span>Endless plains</span>
           </div>
-          <div className={styles.cinePhoto} style={{ bottom: '-6%', left: '-10%', width: 140, transform: 'rotate(6deg)', background: 'linear-gradient(150deg,#8a6a2f,#241d0e)' }}>
+          <div className={styles.cinePhoto} style={{ bottom: '-6%', left: '-10%', width: 140, transform: 'rotate(6deg)' }}>
             <Tile src="/images/home/migration-herd.jpg" alt="Wildebeest herd on the move" />
             <span>The herd</span>
           </div>
-          <div className={styles.cinePhoto} style={{ top: '-4%', right: '-14%', width: 150, transform: 'rotate(5deg)', background: 'linear-gradient(150deg,#6e5a35,#241d0e)' }}>
+          <div className={styles.cinePhoto} style={{ top: '-4%', right: '-14%', width: 150, transform: 'rotate(5deg)' }}>
             <Tile src="/images/home/migration-on-the-move.jpg" alt="The Great Migration on the move" />
             <span>On the move</span>
           </div>
           <div
             className={`${styles.cinePhoto} ${styles.cinePhotoEdge}`}
             ref={migEdgeRef}
-            style={{ bottom: '-10%', right: '-18%', width: 180, transform: 'rotate(-6deg)', background: 'linear-gradient(150deg,#d4a839,#4a3410)' }}
+            style={{ bottom: '-10%', right: '-18%', width: 180, transform: 'rotate(-6deg)' }}
           >
             <Tile src="/images/home/migration-river-crossing.jpg" alt="Wildebeest river crossing" />
             <span>River crossing</span>
@@ -197,23 +190,23 @@ export default function CinematicSection() {
           <div
             className={`${styles.cinePhoto} ${styles.cinePhotoEdge}`}
             ref={calEdgeRef}
-            style={{ top: '-24%', left: '-42%', width: 190, transform: 'rotate(7deg)', background: 'linear-gradient(150deg,#e0c68a,#5a4420)' }}
+            style={{ top: '-24%', left: '-42%', width: 190, transform: 'rotate(7deg)' }}
           >
             <Tile src="/images/home/caldera-rim.jpg" alt="Ngorongoro Crater rim" />
             <span>Crater rim</span>
           </div>
-          <div className={styles.cinePhoto} style={{ bottom: '-26%', left: '-28%', width: 160, transform: 'rotate(-5deg)', background: 'linear-gradient(150deg,#3d5c42,#12201a)' }}>
+          <div className={styles.cinePhoto} style={{ bottom: '-26%', left: '-28%', width: 160, transform: 'rotate(-5deg)' }}>
             <Tile src="/images/home/caldera-big-five.jpg" alt="Big Five wildlife in the crater" />
             <span>Big Five</span>
           </div>
-          <div className={styles.cinePhoto} style={{ top: '-20%', right: '-34%', width: 170, transform: 'rotate(-7deg)', background: 'linear-gradient(150deg,#4a6b4f,#182b1c)' }}>
+          <div className={styles.cinePhoto} style={{ top: '-20%', right: '-34%', width: 170, transform: 'rotate(-7deg)' }}>
             <Tile src="/images/home/caldera-floor.jpg" alt="Ngorongoro Crater floor" />
             <span>The caldera floor</span>
           </div>
           {/* cineHideMobile: this photo file isn't in /public/images/home yet, so
               on phones it's skipped rather than shown as a bare gradient tile.
               Remove that class once caldera-flamingo-lake.jpg is added. */}
-          <div className={`${styles.cinePhoto} ${styles.cineHideMobile}`} style={{ bottom: '-24%', right: '-30%', width: 140, transform: 'rotate(4deg)', background: 'linear-gradient(150deg,#5c7a5f,#1c2f1f)' }}>
+          <div className={`${styles.cinePhoto} ${styles.cineHideMobile}`} style={{ bottom: '-24%', right: '-30%', width: 140, transform: 'rotate(4deg)' }}>
             <Tile src="/images/home/caldera-flamingo-lake.jpg" alt="Flamingos on Lake Magadi" />
             <span>Flamingo lake</span>
           </div>

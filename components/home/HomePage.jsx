@@ -96,7 +96,7 @@ export default function HomePage() {
           <div className={styles.teaserGrid}>
             {/* Photos: /public/images/home/teaser-zanzibar.jpg and teaser-kilimanjaro.jpg
                 — the inline gradient stays as a fallback if either is missing. */}
-            <Link href="/zanzibar" className={styles.teaserCard} style={{ background: 'linear-gradient(150deg,#3a5a6e,#12242c)' }}>
+            <Link href="/zanzibar" className={styles.teaserCard}>
               <FallbackImage className={styles.teaserImg} src="/images/home/teaser-zanzibar.jpg" alt="Zanzibar beach" />
               <div className={styles.teaserShade} />
               <div className={styles.teaserContent}>
@@ -105,7 +105,7 @@ export default function HomePage() {
                 <p>White sand, warm water, and Stone Town — the safari&apos;s natural epilogue.</p>
               </div>
             </Link>
-            <Link href="/destinations" className={styles.teaserCard} style={{ background: 'linear-gradient(150deg,#4a4a4a,#161616)' }}>
+            <Link href="/destinations" className={styles.teaserCard}>
               <FallbackImage className={styles.teaserImg} src="/images/home/teaser-kilimanjaro.jpg" alt="Mount Kilimanjaro" />
               <div className={styles.teaserShade} />
               <div className={styles.teaserContent}>

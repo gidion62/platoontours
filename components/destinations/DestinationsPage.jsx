@@ -111,14 +111,14 @@ export default function DestinationsPage() {
                     <div
                       className={styles.destHImg}
                       style={{
-                        background: `url(/images/destinations-wide/${d.slug}-1.jpg) center/cover no-repeat, linear-gradient(150deg, ${d.grad[0]}, ${d.grad[1]})`,
+                        background: `url(/images/destinations-wide/${d.slug}-1.jpg) center/cover no-repeat`,
                         clipPath: 'inset(0 100% 0 0)',
                       }}
                     />
                     <div
                       className={styles.destHImg}
                       style={{
-                        background: `url(/images/destinations-wide/${d.slug}-2.jpg) center/cover no-repeat, linear-gradient(200deg, ${d.grad[1]}, ${d.grad[0]})`,
+                        background: `url(/images/destinations-wide/${d.slug}-2.jpg) center/cover no-repeat`,
                         clipPath: 'inset(0 100% 0 0)',
                       }}
                     />

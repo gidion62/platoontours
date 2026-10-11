@@ -75,6 +75,11 @@
   padding: 0;
 }
 
+.card:has(.photo:not([data-ready])) {
+  background: transparent;
+  box-shadow: none;
+}
+
 .shell.active .card,
 .shell:hover .card {
   transition: none;
@@ -98,13 +103,12 @@
 .cover {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(150deg, var(--card-grad-0) 0%, var(--card-grad-1) 100%);
 }
 
 /* Real package photo — same file the homepage carousel uses
-   (/images/packages/<slug>.jpg). Sits on top of .cover, which stays as the
-   gradient fallback showing through if the photo 404s (FallbackImage hides
-   itself on error). Shares the pointer-parallax pan with .cover. */
+   (/images/packages/<slug>.jpg). No placeholder colour: until the photo has
+   loaded, the fade, badge and text are hidden (see the rule below), so only
+   the picture appears. Shares the pointer-parallax pan with .cover. */
 .cover,
 .photo {
   transform: translate3d(calc((var(--pointer-from-left) - 0.5) * -14px), calc((var(--pointer-from-top) - 0.5) * -14px), 0)
@@ -117,6 +121,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.photo:not([data-ready]) ~ .glare,
+.photo:not([data-ready]) ~ .shade,
+.photo:not([data-ready]) ~ .badge,
+.photo:not([data-ready]) ~ .duration,
+.photo:not([data-ready]) ~ .panel {
+  opacity: 0;
 }
 
 .glare {

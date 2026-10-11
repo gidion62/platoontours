@@ -241,6 +241,7 @@ export default function TourCard({ title, duration, price, special, grad, slug, 
                 className={styles.photo}
                 src={`/images/packages/${slug}.jpg`}
                 alt={title}
+                loading={index < 6 ? 'eager' : 'lazy'}
               />
             )}
             <div className={styles.glare} />

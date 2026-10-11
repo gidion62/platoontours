@@ -268,14 +268,13 @@
   z-index: 1;
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28), 0 0 0 6px var(--sand-50);
+  background: var(--sand-50);
   display: flex;
   align-items: flex-end;
   padding: 0.7rem;
   transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.3, 1);
 }
-/* Real photo layer — sits over the tile's inline gradient (kept as a
-   fallback: if the file at `src` 404s, onError hides this <img> and the
-   gradient shows through instead, so a missing photo never looks broken). */
+/* Real photo layer. */
 .cinePhotoImg {
   position: absolute;
   inset: 0;
@@ -867,7 +866,6 @@
   border-radius: 14px;
   overflow: hidden;
   margin-bottom: 0.8rem;
-  background: linear-gradient(150deg, var(--sand-400), var(--sand-200));
 }
 .blogThumbImg {
   position: absolute;
@@ -893,4 +891,15 @@
     font-size: 1.9rem;
     padding: 0.45rem 1.2rem;
   }
+}
+
+/* No placeholder colours or gradients behind photos: each card keeps its dark
+   fade and text hidden until its own photo has loaded (FallbackImage sets
+   data-ready on the <img>), so only the picture appears. */
+.destPanelImg:not([data-ready]) ~ .shade,
+.destPanelImg:not([data-ready]) ~ .label,
+.teaserImg:not([data-ready]) ~ .teaserShade,
+.teaserImg:not([data-ready]) ~ .teaserContent,
+.cinePhotoImg:not([data-ready]) ~ .cinePhotoShade {
+  opacity: 0;
 }

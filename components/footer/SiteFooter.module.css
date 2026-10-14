@@ -23,12 +23,12 @@
   margin: 0 0 0.8rem;
 }
 .footLogoMark {
-  height: 52px;
-  width: 52px;
-  border-radius: 50%;
+  height: 62px;
+  width: auto;
+  border-radius: 12px;
   background: #fff8ed;
   object-fit: contain;
-  padding: 3px;
+  padding: 4px;
   flex-shrink: 0;
 }
 .footLogo {

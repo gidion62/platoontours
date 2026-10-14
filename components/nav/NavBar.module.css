@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 1.6rem;
+  padding: 0.5rem 1.6rem;
   background: rgba(250, 247, 242, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -20,7 +20,7 @@
   box-shadow: 0 12px 30px rgba(74, 63, 54, 0.12);
 }
 .logoMark {
-  height: 44px;
+  height: 60px;
   width: auto;
   flex-shrink: 0;
   display: inline-block;

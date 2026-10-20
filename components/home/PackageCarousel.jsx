@@ -9,13 +9,13 @@ import styles from './HomePage.module.css';
 import 'swiper/css/bundle';
 import './packageCard.css';
 
-// The 17-package set for the homepage's Swiper CoverFlow carousel — kept in
+// The 20-package set (17 Tanzania + 3 East Africa) for the homepage's Swiper CoverFlow carousel — kept in
 // sync manually with lib/packages.js (see the comment on that file / on
 // BookingEngine.jsx's PACKAGE_NAMES for the same tradeoff).
 const CARD_DATA = [
   { title: 'Balloon Safari: 7-Day Luxury Tanzania Safari in the Serengeti', price: 'From $3,700', special: true, tint1: '#8a6a2f', tint2: '#241d0e', slug: '7-day-luxury-tanzania-safari-with-serengeti-balloon-safari' },
   { title: '6-Day Tanzania Safari + 5-Day Zanzibar Luxury Escape', price: 'From $3,400', special: true, tint1: '#3a5a6e', tint2: '#12242c', slug: '6-day-tanzania-safari-5-day-zanzibar-luxury-escape' },
-  { title: "5-Day Luxury Honeymoon Safari: Tanzania's Northern Circuit", price: 'From $2,400', special: true, tint1: '#6e3550', tint2: '#2a1420', slug: '5-day-luxury-honeymoon-safari-tanzanias-northern-circuit' },
+  { title: "5-Day Honeymoon Safari: Tanzania's Northern Circuit", price: 'From $2,400', special: true, tint1: '#6e3550', tint2: '#2a1420', slug: '5-day-luxury-honeymoon-safari-tanzanias-northern-circuit' },
   { title: '6-Day Mid-Range Safari: The Great Calving Season', price: 'From $2,800', special: true, tint1: '#3d5c42', tint2: '#12201a', slug: '6-day-mid-range-safari-the-great-calving-season' },
   { title: '9-Day Safari: The Ultimate Mara River Crossing Experience', price: 'From $2,500', special: true, tint1: '#3a5a6e', tint2: '#12242c', slug: '9-day-safari-the-ultimate-mara-river-crossing-experience' },
   { title: '9-Day Tanzania Safari Express: Lake Manyara, Lake Natron, Serengeti, Ngorongoro & Tarangire', price: 'From $3,600', special: false, tint1: '#6e3550', tint2: '#2a1420', slug: '9-day-tanzania-safari-express-lake-manyara-lake-natron-serengeti-ngorongoro-tarangire' },
@@ -30,6 +30,9 @@ const CARD_DATA = [
   { title: '10 Days - Tarangire, Lake Manyara, Lake Natron, Serengeti, Ngorongoro Crater, and Lake Eyasi', price: 'From $4,500', special: false, tint1: '#7d3f20', tint2: '#2a1c12', slug: '10-days-tarangire-lake-manyara-lake-natron-serengeti-ngorongoro-crater-and-lake-eyasi' },
   { title: '5 Days - Lake Manyara, Ngorongoro Crater, Serengeti (2 nights), and Tarangire', price: 'From $1,900', special: false, tint1: '#3a5a6e', tint2: '#12242c', slug: '5-days-lake-manyara-ngorongoro-crater-serengeti-2-nights-and-tarangire' },
   { title: '6 Days - Tarangire, Serengeti and Ngorongoro Crater', price: 'From $1,800', special: false, tint1: '#3d5c42', tint2: '#12201a', slug: '6-days-tarangire-serengeti-and-ngorongoro-crater' },
+  { title: '2-Day Rwanda Gorilla Trekking Safari (Kigali Round-Trip)', price: 'From $2,200', special: false, tag: 'East Africa', tint1: '#3d5c42', tint2: '#12201a', slug: '2-day-rwanda-gorilla-trekking-safari-kigali' },
+  { title: '5-Day Uganda Gorilla & Wildlife Safari (Entebbe Round-Trip)', price: 'From $2,300', special: false, tag: 'East Africa', tint1: '#3d5c56', tint2: '#12201e', slug: '5-day-uganda-gorilla-wildlife-safari-entebbe' },
+  { title: '8-Day Kenya–Tanzania Mid-Range Safari (Nairobi → Kilimanjaro)', price: 'From $3,900', special: false, tag: 'East Africa', tint1: '#6e5a35', tint2: '#241d0e', slug: '8-day-kenya-tanzania-mid-range-safari-nairobi-kilimanjaro' },
 ];
 
 // Each card's photo lives at /public/images/packages/<slug>.jpg — same slug
@@ -43,7 +46,7 @@ function cardMarkup(d) {
       <img class="pkg-img" src="/images/packages/${d.slug}.jpg" alt="${d.title}" loading="lazy" onload="this.setAttribute('data-ready','true')" onerror="this.style.display='none';this.setAttribute('data-ready','true')" />
       <div class="pkg-shade"></div>
       <div class="pkg-content">
-        ${d.special ? '<span class="pkg-tag">Special</span>' : ''}
+        ${d.special ? '<span class="pkg-tag">Special</span>' : d.tag ? `<span class="pkg-tag">${d.tag}</span>` : ''}
         <h3 class="pkg-title">${d.title}</h3>
         <span class="pkg-price">${d.price}</span>
       </div>

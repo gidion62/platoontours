@@ -26,7 +26,7 @@ const clamp = (v, min = 0, max = 100) => Math.min(Math.max(v, min), max);
 const round = (v, precision = 3) => parseFloat(v.toFixed(precision));
 const adjust = (v, fMin, fMax, tMin, tMax) => round(tMin + ((tMax - tMin) * (v - fMin)) / (fMax - fMin));
 
-export default function TourCard({ title, duration, price, special, grad, slug, index = 0, enableTilt = true }) {
+export default function TourCard({ title, duration, price, special, badge, grad, slug, index = 0, enableTilt = true }) {
   const router = useRouter();
   const wrapRef = useRef(null);
   const shellRef = useRef(null);
@@ -247,7 +247,7 @@ export default function TourCard({ title, duration, price, special, grad, slug, 
             <div className={styles.glare} />
             <div className={styles.shade} />
 
-            {special && <span className={styles.badge}>Special Package</span>}
+            {(special || badge) && <span className={styles.badge}>{badge || 'Special Package'}</span>}
             <span className={styles.duration}>{duration}</span>
 
             <div className={styles.panel}>

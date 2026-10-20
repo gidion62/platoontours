@@ -5,10 +5,13 @@ import styles from './PageHeader.module.css';
 // in the original build — port components/shared/MaskedHeading.jsx from the
 // original script's IIFE (search platoon-frontend-preview.html for
 // "MaskedHeading — ported from React Bits") and swap it in here once ready.
-export default function PageHeader({ title }) {
+export default function PageHeader({ title, subtitle }) {
   return (
     <header className={styles.pageHeader}>
-      <h1>{title}</h1>
+      <h1>
+        {title}
+        {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
+      </h1>
     </header>
   );
 }

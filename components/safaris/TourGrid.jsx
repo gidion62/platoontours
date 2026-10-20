@@ -7,15 +7,16 @@ import styles from './TourGrid.module.css';
 // (which used the same full-screen scroll-hijack language as the homepage's
 // cinematic section — repeating that effect right after it on the very next
 // page a visitor lands on read as a worse experience, not a fancier one).
-export default function TourGrid() {
+export default function TourGrid({ packages = safariPackages }) {
   return (
     <div className={styles.grid}>
-            {safariPackages.map((pkg, i) => (
+            {packages.map((pkg, i) => (
         <TourCard
           key={pkg.slug}
           title={pkg.title}
           price={pkg.price}
           special={pkg.special}
+          badge={pkg.badge}
           grad={pkg.grad}
           slug={pkg.slug}
           index={i}

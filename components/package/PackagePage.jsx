@@ -20,6 +20,7 @@ export default function PackagePage({ data, slug }) {
         <div className={styles.pkgHeroMeta}>
           <span className={styles.pkgPriceBadge}>{d.price} / person</span>
           {d.special && <span className={styles.pkgSpecialBadge}>Special Package</span>}
+          {d.badge && <span className={styles.pkgSpecialBadge}>{d.badge}</span>}
         </div>
         <p className={styles.pkgIntro}>{d.intro}</p>
       </header>

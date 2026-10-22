@@ -26,7 +26,7 @@ export default function SiteFooter() {
                 <path d="M12 6.5c-2.6 0-4.9.9-6.6 2.4h13.2C16.9 7.4 14.6 6.5 12 6.5z" fill="none" stroke="#fff8ed" strokeWidth="1.6" />
               </svg>
             </a>
-            <a href="https://www.instagram.com/platoontours?igsh=NzA5MHBsNjdvNDNm" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/platoon_tours?cplk=MTZ3eWh3dHpxbWRubg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg viewBox="0 0 24 24">
                 <rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="#fff8ed" strokeWidth="1.6" />
                 <circle cx="12" cy="12" r="3.6" fill="none" stroke="#fff8ed" strokeWidth="1.6" />

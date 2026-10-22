@@ -147,6 +147,9 @@ export default function AdminDashboard({ initialBookings, initialInquiries }) {
                   {tab === 'bookings' && item.packageName && (
                     <span className={styles.cardPackage}>{item.packageName}</span>
                   )}
+                  {tab === 'bookings' && item.experienceName && (
+                    <span className={styles.cardPackage}>Experience: {item.experienceName}</span>
+                  )}
                 </div>
                 <div className={styles.cardMeta}>
                   <StatusBadge status={item.status} />
@@ -161,6 +164,10 @@ export default function AdminDashboard({ initialBookings, initialInquiries }) {
                       <div>
                         <strong>Package</strong>
                         <p>{item.packageName || '—'}</p>
+                      </div>
+                      <div>
+                        <strong>Experience</strong>
+                        <p>{item.experienceName || '—'}</p>
                       </div>
                       <div>
                         <strong>Travel month</strong>

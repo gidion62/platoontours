@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/siteConfig';
 const BASE_URL = SITE_URL;
 
 export default function sitemap() {
-  const staticRoutes = ['', '/about', '/safaris', '/zanzibar', '/destinations', '/contact', '/blog', '/terms'].map((path) => ({
+  const staticRoutes = ['', '/about', '/safaris', '/zanzibar', '/destinations', '/contact', '/experiences', '/terms'].map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified: new Date(),
   }));

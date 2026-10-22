@@ -9,6 +9,7 @@ import styles from './HomePage.module.css';
 import RevealOnMount from '@/components/shared/RevealOnMount';
 import FallbackImage from '@/components/shared/FallbackImage';
 import BookNowSlideshow from './BookNowSlideshow';
+import HomeExperiences from './HomeExperiences';
 
 export default function HomePage() {
   return (
@@ -179,16 +180,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      <HomeExperiences />
+
       <section>
         <div className="section-inner reveal">
           <div className={styles.blogHead}>
             <h2>From the journal</h2>
-            <Link href="/blog">Read the blog</Link>
+            <Link href="/experiences#journal">Read the blog</Link>
           </div>
           <div className={styles.blogGridHome}>
             {/* Photos: /public/images/home/blog-serengeti-timing.jpg,
                 blog-packing-list.jpg, blog-ndutu-calving.jpg */}
-            <Link className={styles.blogCardHome} href="/blog">
+            <Link className={styles.blogCardHome} href="/experiences#journal">
               <div className={styles.blogThumb}>
                 <FallbackImage
                   className={styles.blogThumbImg}
@@ -199,7 +202,7 @@ export default function HomePage() {
               <h3>The Best Time to Visit the Serengeti</h3>
               <p>A month-by-month breakdown of the migration, the rains, and the crowds.</p>
             </Link>
-            <Link className={styles.blogCardHome} href="/blog">
+            <Link className={styles.blogCardHome} href="/experiences#journal">
               <div className={styles.blogThumb}>
                 <FallbackImage
                   className={styles.blogThumbImg}
@@ -210,7 +213,7 @@ export default function HomePage() {
               <h3>What to Actually Pack for a Tanzania Safari</h3>
               <p>Beyond the generic checklist — what guides really tell first-timers.</p>
             </Link>
-            <Link className={styles.blogCardHome} href="/blog">
+            <Link className={styles.blogCardHome} href="/experiences#journal">
               <div className={styles.blogThumb}>
                 <FallbackImage
                   className={styles.blogThumbImg}

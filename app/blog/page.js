@@ -1,11 +1,7 @@
-import BlogPage from '@/components/blog/BlogPage';
+import { permanentRedirect } from 'next/navigation';
 
-export const metadata = {
-  title: 'The Platoon Journal',
-  description: 'Safari planning guides, packing lists, and stories from the field — the Platoon Tours blog.',
-  alternates: { canonical: '/blog' },
-};
-
+// The blog page has become "Experiences" — keep old /blog links (Google,
+// bookmarks, social posts) working by sending them to the new page.
 export default function Page() {
-  return <BlogPage />;
+  permanentRedirect('/experiences');
 }

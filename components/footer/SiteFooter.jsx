@@ -45,7 +45,7 @@ export default function SiteFooter() {
           <Link href="/safaris">Safaris</Link>
           <Link href="/zanzibar">Zanzibar</Link>
           <Link href="/destinations">Destinations</Link>
-          <Link href="/blog">Blog</Link>
+          <Link href="/experiences">Experiences</Link>
         </div>
         <div className={styles.footCol}>
           <h4>Company</h4>

@@ -6,6 +6,8 @@ import mongoose from 'mongoose';
 const BookingSchema = new mongoose.Schema(
   {
     packageName: { type: String, default: '' },
+    // Optional "Experience" picked on the booking form (see lib/experiences.js).
+    experienceName: { type: String, default: '' },
     month: { type: String, default: '' },
     groupSize: { type: String, default: '' },
     tier: { type: String, default: '' },

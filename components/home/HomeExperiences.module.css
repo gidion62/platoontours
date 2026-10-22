@@ -1,0 +1,141 @@
+.wrap {
+  background: var(--sand-100);
+}
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.eyebrow {
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.4rem;
+}
+.head h2 {
+  text-align: left;
+  margin: 0;
+  font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+}
+.all {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--clay);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.all:hover {
+  color: var(--clay-dark);
+  text-decoration: underline;
+}
+.grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* a little stagger so the row doesn't read as three identical boxes */
+  .card:nth-child(2) {
+    transform: translateY(1.4rem);
+  }
+}
+.card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 18px 36px rgba(74, 63, 54, 0.22);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 46px rgba(74, 63, 54, 0.3);
+}
+@media (min-width: 760px) {
+  .card:nth-child(2):hover {
+    transform: translateY(calc(1.4rem - 6px));
+  }
+}
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.4s ease;
+}
+.card:hover .img {
+  transform: scale(1.08);
+}
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 38%, rgba(20, 14, 10, 0.82) 100%);
+}
+/* never show the dark fade or text before the photo itself is there */
+.img:not([data-ready]) ~ .shade,
+.img:not([data-ready]) ~ .tag,
+.img:not([data-ready]) ~ .body {
+  opacity: 0;
+}
+.card:has(.img:not([data-ready])) {
+  background: transparent;
+  box-shadow: none;
+}
+.tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 248, 237, 0.92);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+.body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.3rem 1.3rem 1.4rem;
+}
+.body h3 {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 0 0 0.4rem;
+}
+.body p {
+  margin: 0 0 0.7rem;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.86);
+}
+.more {
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  gap: 0.4rem;
+  transition: gap 0.25s ease;
+}
+.card:hover .more {
+  gap: 0.8rem;
+}

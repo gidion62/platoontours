@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { href: '/zanzibar', label: 'Zanzibar' },
   { href: '/destinations', label: 'Destinations' },
   { href: '/contact', label: 'Contact Us' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/experiences', label: 'Experiences' },
 ];
 
 export default function SiteHeader() {

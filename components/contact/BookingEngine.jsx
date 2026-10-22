@@ -3,11 +3,16 @@
 import { useState } from 'react';
 import styles from './ContactPage.module.css';
 import packageDetails from '@/lib/packages';
+import experiences from '@/lib/experiences';
 
 // Every package's title, pulled straight from lib/packages.js so the "which
 // safari" dropdown can never drift out of sync with the real package list
 // again — add a package there and it shows up here automatically.
 const PACKAGE_NAMES = Object.values(packageDetails).map((p) => p.title);
+
+// Optional experience add-on — built from lib/experiences.js, so a new
+// experience added there shows up in this dropdown automatically.
+const EXPERIENCE_NAMES = experiences.map((x) => `${x.name} — ${x.title}`);
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const TIERS = ['Budget', 'Mid-range', 'Luxury'];
@@ -21,6 +26,7 @@ export default function BookingEngine() {
   const [error, setError] = useState(null);
   const [form, setForm] = useState({
     packageName: '',
+    experienceName: '',
     month: '',
     groupSize: '',
     tier: null,
@@ -85,6 +91,15 @@ export default function BookingEngine() {
               <select id="bfPackage" value={form.packageName} onChange={update('packageName')}>
                 <option value="">Not sure yet — help me choose</option>
                 {PACKAGE_NAMES.map((n) => (
+                  <option key={n}>{n}</option>
+                ))}
+              </select>
+            </div>
+            <div className={styles.beField}>
+              <label htmlFor="bfExperience">Add an experience? (optional)</label>
+              <select id="bfExperience" value={form.experienceName} onChange={update('experienceName')}>
+                <option value="">No experience — safari only</option>
+                {EXPERIENCE_NAMES.map((n) => (
                   <option key={n}>{n}</option>
                 ))}
               </select>

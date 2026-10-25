@@ -51,7 +51,7 @@ export default function SiteFooter() {
           <h4>Company</h4>
           <Link href="/about">About Us</Link>
           <Link href="/contact">Contact Us</Link>
-          <Link href="/destinations">Mt. Kilimanjaro</Link>
+          <a href="/destinations#kilimanjaro">Mt. Kilimanjaro</a>
         </div>
         <div className={styles.footCol}>
           <h4>Support</h4>

@@ -104,7 +104,7 @@ export default function PackagePage({ data, slug }) {
       >
         <h3 className={styles.pkgCtaTitle}>Ready to book this safari?</h3>
         <Link href="/contact" className={styles.btnCtaBig}>
-          Start Booking
+          Request My Free Quote
         </Link>
       </ScrollExpand>
 

@@ -198,9 +198,12 @@ export default function BookingEngine() {
                 ← Back
               </button>
               <button type="submit" className={`${styles.beBtn} ${styles.beBtnNext}`} disabled={submitting}>
-                {submitting ? 'Sending…' : 'Send Booking Request'}
+                {submitting ? 'Sending…' : 'Request My Free Quote'}
               </button>
             </div>
+            <p style={{ textAlign: 'center', margin: '0.9rem 0 0', fontSize: '0.82rem', color: 'rgba(74, 63, 54, 0.65)' }}>
+              We reply within 24 hours | No payment required
+            </p>
           </div>
         </form>
       ) : (

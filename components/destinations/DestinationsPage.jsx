@@ -73,6 +73,36 @@ export default function DestinationsPage() {
     };
   }, []);
 
+  // Deep links like /destinations#kilimanjaro (used by the footer): jump the
+  // pinned horizontal scroller straight to that destination's panel.
+  useEffect(() => {
+    function goToHash() {
+      const idx = destinations.findIndex((d) => d.slug === window.location.hash.replace('#', ''));
+      const rig = rigRef.current;
+      const track = trackRef.current;
+      if (idx < 0 || !rig || !track) return;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) {
+        track.children[idx]?.scrollIntoView();
+        return;
+      }
+      const total = rig.offsetHeight - window.innerHeight;
+      const top = rig.getBoundingClientRect().top + window.scrollY;
+      const n = destinations.length;
+      window.scrollTo({ top: top + (idx / (n - 1)) * total, behavior: 'instant' });
+    }
+    // Wait a frame so the scroller above has set its height, then re-check
+    // once more in case fonts/images shifted the layout.
+    const raf = requestAnimationFrame(goToHash);
+    const t = setTimeout(goToHash, 500);
+    window.addEventListener('hashchange', goToHash);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(t);
+      window.removeEventListener('hashchange', goToHash);
+    };
+  }, []);
+
   return (
     <div className="page" data-page="destinations">
       <PageHeader title="Tanzania Safari Destinations" />

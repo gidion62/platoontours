@@ -12,7 +12,7 @@ const ITEMS = [
   { name: 'Ngorongoro Crater', img: 'ngorongoro', grad: ['#3d5c42', '#12201a'] },
   { name: 'Lake Manyara National Park', img: 'lake-manyara', grad: ['#3a5a6e', '#12242c'] },
   { name: 'Tarangire National Park', img: 'tarangire', grad: ['#6e5a35', '#241d0e'] },
-  { name: 'Lake Natron', img: 'lake-natron', grad: ['#6e3550', '#2a1420'] },
+  { name: 'Lake Natron', img: 'lake-natron-flamingos', grad: ['#6e3550', '#2a1420'] },
   { name: 'Mount Kilimanjaro', img: 'kilimanjaro', grad: ['#4a4a4a', '#161616'] },
 ];
 const DEFAULT_INDEX = 2;

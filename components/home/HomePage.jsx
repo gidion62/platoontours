@@ -59,38 +59,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CinematicSection />
-
       <section className={styles.carouselSection} id="packages">
         <div className="section-inner">
           <h2 className="reveal">Every safari, arranged around you.</h2>
-          <p className="reveal" style={{ color: 'var(--clay)', fontWeight: 600 }}>Browse with the arrows.</p>
+          <p className="reveal" style={{ color: 'var(--clay)', fontWeight: 600 }}>Browse our safari packages with the arrows.</p>
           <PackageCarousel />
         </div>
       </section>
 
-      <section className={styles.trustSection}>
-        <div className="section-inner reveal">
-          <h2 className={styles.trustHeading}>What guests are saying</h2>
-          <div className={styles.trustGrid}>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;The founders themselves guided us — you can feel the difference in how they read the terrain and the animals.&rdquo;</p>
-              <div className={styles.trustMeta}>Sarah M. · Tripadvisor</div>
-            </div>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;Our honeymoon safari was unforgettable. Private sundowners on the crater rim, exactly as promised.&rdquo;</p>
-              <div className={styles.trustMeta}>James &amp; Priya K. · Google</div>
-            </div>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;Small group, real expertise, zero tourist-trap energy. Booking again for Zanzibar.&rdquo;</p>
-              <div className={styles.trustMeta}>Daniel R. · Trustpilot</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeExperiences />
 
       <section>
         <div className="section-inner reveal">
@@ -115,6 +92,31 @@ export default function HomePage() {
                 <p>Climbable without technical experience on the Machame route.</p>
               </div>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <CinematicSection />
+
+      <section className={styles.trustSection}>
+        <div className="section-inner reveal">
+          <h2 className={styles.trustHeading}>What guests are saying</h2>
+          <div className={styles.trustGrid}>
+            <div className={styles.trustCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <p>&ldquo;The founders themselves guided us — you can feel the difference in how they read the terrain and the animals.&rdquo;</p>
+              <div className={styles.trustMeta}>Sarah M. · Tripadvisor</div>
+            </div>
+            <div className={styles.trustCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <p>&ldquo;Our honeymoon safari was unforgettable. Private sundowners on the crater rim, exactly as promised.&rdquo;</p>
+              <div className={styles.trustMeta}>James &amp; Priya K. · Google</div>
+            </div>
+            <div className={styles.trustCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <p>&ldquo;Small group, real expertise, zero tourist-trap energy. Booking again for Zanzibar.&rdquo;</p>
+              <div className={styles.trustMeta}>Daniel R. · Trustpilot</div>
+            </div>
           </div>
         </div>
       </section>
@@ -179,8 +181,6 @@ export default function HomePage() {
           <FaqList />
         </div>
       </section>
-
-      <HomeExperiences />
 
       <section>
         <div className="section-inner reveal">

@@ -7,6 +7,10 @@
   width: min(94vw, 1180px);
   z-index: 1000;
 }
+/* homepage only: sit flush against the top edge of the page */
+.navWrapTop {
+  top: 0;
+}
 .nav {
   display: flex;
   justify-content: space-between;

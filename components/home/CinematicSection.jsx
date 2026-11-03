@@ -27,8 +27,8 @@ function Tile({ src, alt }) {
   );
 }
 
-// Pinned cinematic scroll story: intro -> migration -> caldera -> "what sets
-// us apart". Ported as-is from the vanilla build — each .cineMoment fades
+// Pinned cinematic scroll story: intro -> "what sets us apart" -> migration ->
+// caldera. Ported from the vanilla build — each .cineMoment fades
 // and slides in/out based on scroll position within the tall .cineRig, and
 // two "edge" photos bridge the Migration and Caldera moments so the
 // transition reads as one continuous camera move rather than a hard cut.
@@ -89,9 +89,9 @@ export default function CinematicSection() {
       const s = clamp01(-rect.top / total) * total;
 
       band(intro, s, 100, 420, 750, 980);
-      band(migration, s, 980, 1300, 1650, 1880, 'x');
-      band(caldera, s, 1880, 2200, 2550, 2780, 'x');
-      band(why, s, 2780, 3150);
+      band(why, s, 980, 1300, 1650, 1880);
+      band(migration, s, 1880, 2200, 2550, 2780, 'x');
+      band(caldera, s, 2780, 3100);
 
       // Phones only: the "What sets us apart" box scrolls internally (its
       // content is taller than the screen). While it was still invisible
@@ -113,11 +113,11 @@ export default function CinematicSection() {
       // takes over — so the two moments feel like one continuous camera
       // move, not a cut.
       if (migEdge) {
-        const bridge = smooth(1450, 1880, s);
+        const bridge = smooth(2350, 2780, s);
         migEdge.style.transform = `rotate(-6deg) translateX(${bridge * 100}px) translateY(${-bridge * 34}px) scale(${1 + bridge * 0.18})`;
       }
       if (calEdge) {
-        const settle = 1 - smooth(1880, 2380, s);
+        const settle = 1 - smooth(2780, 3280, s);
         calEdge.style.transform = `rotate(7deg) translateX(${-settle * 100}px) translateY(${-settle * 34}px) scale(${1 + settle * 0.18})`;
       }
     }
@@ -144,6 +144,58 @@ export default function CinematicSection() {
             experience the real Africa, not the tourist traps.
           </p>
           <p className={`${styles.cineSignature} font-accent`}>— Welcome to the Platoon</p>
+        </div>
+
+        <div className={`${styles.cineMoment} ${styles.cineWhy}`} style={{ maxWidth: '52rem' }} ref={whyRef}>
+          <h2 className="font-display">What sets us apart.</h2>
+          <div className={styles.cineDiffGrid}>
+            <div className={styles.cineDiffItem}>
+              <h3>Founder-Led Guiding</h3>
+              <p>Every safari is personally guided by one of the founders — no outsourcing to freelancers.</p>
+            </div>
+            <div className={styles.cineDiffItem}>
+              <h3>Military-Grade Safety</h3>
+              <p>Trained medics, advanced trauma kits, and routes pre-mapped for emergency evacuation.</p>
+            </div>
+            <div className={styles.cineDiffItem}>
+              <h3>Small Groups Only</h3>
+              <p>We keep every group intimate so you get our full attention, not a bus-tour pace.</p>
+            </div>
+            <div className={styles.cineDiffItem}>
+              <h3>Zero Tourist Traps</h3>
+              <p>Off the beaten path — hidden viewpoints and local communities mass tourism never reaches.</p>
+            </div>
+            <div className={styles.cineDiffItem}>
+              <h3>Expert Knowledge</h3>
+              <p>With years of experience in Tanzania, our team is made up of local experts who know the ins and outs of the country&apos;s parks, culture, and wildlife.</p>
+            </div>
+            <div className={styles.cineDiffItem}>
+              <h3>Tailor-Made Safaris</h3>
+              <p>Whether you&apos;re looking for a luxury safari, a budget-friendly adventure, or a family-friendly experience, we create bespoke travel plans designed just for you.</p>
+            </div>
+            <div className={styles.cineDiffItem}>
+              <h3>Authentic Local Connections</h3>
+              <p>We believe in offering an authentic Tanzanian experience — helping you connect with the people and cultures of Tanzania in meaningful ways.</p>
+            </div>
+            <div className={styles.cineDiffItem}>
+              <h3>Exceptional Customer Care</h3>
+              <p>From the moment you contact us until you return home, we provide attentive, personalized service.</p>
+            </div>
+          </div>
+          <div className={styles.cineStats} style={{ marginTop: '2.2rem' }}>
+            <div>
+              <div className={styles.cineStatNum}>8+</div>
+              <div className={styles.cineStatLabel}>years of experience</div>
+            </div>
+            <div>
+              <div className={styles.cineStatNum}>20+</div>
+              <div className={styles.cineStatLabel}>tailor-made safari itineraries</div>
+            </div>
+            <div>
+              <div className={styles.cineStatNum}>5.0</div>
+              <div className={styles.cineStatLabel}>average guest rating</div>
+            </div>
+          </div>
         </div>
 
         <div className={styles.cineMoment} ref={migrationRef}>
@@ -219,58 +271,6 @@ export default function CinematicSection() {
             plunging <strong>2,000ft</strong> into a self-contained ecosystem where the Big Five odds are as close to
             guaranteed as safari gets.
           </p>
-        </div>
-
-        <div className={`${styles.cineMoment} ${styles.cineWhy}`} style={{ maxWidth: '52rem' }} ref={whyRef}>
-          <h2 className="font-display">What sets us apart.</h2>
-          <div className={styles.cineDiffGrid}>
-            <div className={styles.cineDiffItem}>
-              <h3>Founder-Led Guiding</h3>
-              <p>Every safari is personally guided by one of the founders — no outsourcing to freelancers.</p>
-            </div>
-            <div className={styles.cineDiffItem}>
-              <h3>Military-Grade Safety</h3>
-              <p>Trained medics, advanced trauma kits, and routes pre-mapped for emergency evacuation.</p>
-            </div>
-            <div className={styles.cineDiffItem}>
-              <h3>Small Groups Only</h3>
-              <p>We keep every group intimate so you get our full attention, not a bus-tour pace.</p>
-            </div>
-            <div className={styles.cineDiffItem}>
-              <h3>Zero Tourist Traps</h3>
-              <p>Off the beaten path — hidden viewpoints and local communities mass tourism never reaches.</p>
-            </div>
-            <div className={styles.cineDiffItem}>
-              <h3>Expert Knowledge</h3>
-              <p>With years of experience in Tanzania, our team is made up of local experts who know the ins and outs of the country&apos;s parks, culture, and wildlife.</p>
-            </div>
-            <div className={styles.cineDiffItem}>
-              <h3>Tailor-Made Safaris</h3>
-              <p>Whether you&apos;re looking for a luxury safari, a budget-friendly adventure, or a family-friendly experience, we create bespoke travel plans designed just for you.</p>
-            </div>
-            <div className={styles.cineDiffItem}>
-              <h3>Authentic Local Connections</h3>
-              <p>We believe in offering an authentic Tanzanian experience — helping you connect with the people and cultures of Tanzania in meaningful ways.</p>
-            </div>
-            <div className={styles.cineDiffItem}>
-              <h3>Exceptional Customer Care</h3>
-              <p>From the moment you contact us until you return home, we provide attentive, personalized service.</p>
-            </div>
-          </div>
-          <div className={styles.cineStats} style={{ marginTop: '2.2rem' }}>
-            <div>
-              <div className={styles.cineStatNum}>8+</div>
-              <div className={styles.cineStatLabel}>years of experience</div>
-            </div>
-            <div>
-              <div className={styles.cineStatNum}>20+</div>
-              <div className={styles.cineStatLabel}>tailor-made safari itineraries</div>
-            </div>
-            <div>
-              <div className={styles.cineStatNum}>5.0</div>
-              <div className={styles.cineStatLabel}>average guest rating</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

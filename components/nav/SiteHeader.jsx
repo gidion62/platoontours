@@ -35,7 +35,7 @@ export default function SiteHeader() {
 
   return (
     <>
-      <div className={navStyles.navWrap}>
+      <div className={`${navStyles.navWrap} ${pathname === '/' ? navStyles.navWrapTop : ''}`}>
         <nav className={navStyles.nav}>
           <Link href="/" className={navStyles.logo} aria-label="Platoon Tours — Home">
             <img src="/images/logo.png" alt="Platoon Tours" className={navStyles.logoMark} />

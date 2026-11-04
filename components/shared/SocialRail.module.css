@@ -1,0 +1,44 @@
+/* Small social rail fixed to the left edge, on every page, while scrolling.
+   Sits under the mobile menu drawer (z-index 400) so the drawer covers it. */
+.rail {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 390;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.rail a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 34px;
+  background: #fff;
+  color: var(--clay);
+  border-radius: 0 999px 999px 0;
+  box-shadow: 0 4px 12px rgba(42, 32, 24, 0.18);
+  transition: width 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+.rail a:hover,
+.rail a:focus-visible {
+  width: 42px;
+  background: var(--clay);
+  color: #fff;
+}
+.rail svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+@media (max-width: 600px) {
+  .rail { gap: 5px; }
+  .rail a { width: 28px; height: 26px; }
+  .rail a:hover, .rail a:focus-visible { width: 32px; }
+  .rail svg { width: 14px; height: 14px; }
+}
+@media print {
+  .rail { display: none; }
+}

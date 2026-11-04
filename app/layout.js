@@ -1,6 +1,7 @@
 import Script from 'next/script';
 import SiteHeader from '@/components/nav/SiteHeader';
 import SiteFooter from '@/components/footer/SiteFooter';
+import SocialRail from '@/components/shared/SocialRail';
 import OrganizationSchema from '@/components/shared/OrganizationSchema';
 import { SITE_URL, DEFAULT_OG_IMAGE } from '@/lib/siteConfig';
 import '@/styles/globals.css';
@@ -67,6 +68,7 @@ export default function RootLayout({ children }) {
       <body>
         <OrganizationSchema />
         <SiteHeader />
+        <SocialRail />
         {children}
         <SiteFooter />
         {/* Tawk.to live chat — loads after the page is interactive so it never blocks rendering */}

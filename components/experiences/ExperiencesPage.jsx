@@ -9,8 +9,8 @@ import useScrollReveal from '@/components/shared/useScrollReveal';
 import experiences from '@/lib/experiences';
 import styles from './ExperiencesPage.module.css';
 
-const LAYOUTS = ['lay0', 'lay1', 'lay1', 'lay2', 'lay1', 'lay3'];
-const TICKER = ['Hadzabe hunters', 'Crater-lake canoes', 'Turquoise hot springs', 'Kilimanjaro coffee', 'Maasai markets', 'An 80-metre waterfall', 'Flamingo shores'];
+const LAYOUTS = ['lay0', 'lay1', 'lay1', 'lay2', 'lay1', 'lay3', 'lay0', 'lay2'];
+const TICKER = ['Hadzabe hunters', 'Crater-lake canoes', 'Turquoise hot springs', 'Kilimanjaro coffee', 'Maasai markets', 'An 80-metre waterfall', 'Flamingo shores', 'Bush dinners', 'Night drives'];
 
 function Words({ text }) {
   return text.split(' ').map((w, i) => (

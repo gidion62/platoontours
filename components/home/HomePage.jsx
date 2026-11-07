@@ -98,29 +98,6 @@ export default function HomePage() {
 
       <CinematicSection />
 
-      <section className={styles.trustSection}>
-        <div className="section-inner reveal">
-          <h2 className={styles.trustHeading}>What guests are saying</h2>
-          <div className={styles.trustGrid}>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;The founders themselves guided us — you can feel the difference in how they read the terrain and the animals.&rdquo;</p>
-              <div className={styles.trustMeta}>Sarah M. · Tripadvisor</div>
-            </div>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;Our honeymoon safari was unforgettable. Private sundowners on the crater rim, exactly as promised.&rdquo;</p>
-              <div className={styles.trustMeta}>James &amp; Priya K. · Google</div>
-            </div>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;Small group, real expertise, zero tourist-trap energy. Booking again for Zanzibar.&rdquo;</p>
-              <div className={styles.trustMeta}>Daniel R. · Trustpilot</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section>
         <div className="section-inner reveal">
           {/* TODO: swap for the MaskedHeading reveal treatment used in the original build */}
@@ -224,6 +201,29 @@ export default function HomePage() {
               <h3>Inside the Ndutu Calving Season</h3>
               <p>Why this three-month window is unlike anywhere else in Africa.</p>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.trustSection}>
+        <div className="section-inner reveal">
+          <h2 className={styles.trustHeading}>What guests are saying</h2>
+          <div className={styles.trustGrid}>
+            <div className={styles.trustCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <p>&ldquo;The founders themselves guided us — you can feel the difference in how they read the terrain and the animals.&rdquo;</p>
+              <div className={styles.trustMeta}>Sarah M. · Tripadvisor</div>
+            </div>
+            <div className={styles.trustCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <p>&ldquo;Our honeymoon safari was unforgettable. Private sundowners on the crater rim, exactly as promised.&rdquo;</p>
+              <div className={styles.trustMeta}>James &amp; Priya K. · Google</div>
+            </div>
+            <div className={styles.trustCard}>
+              <div className={styles.stars}>★★★★★</div>
+              <p>&ldquo;Small group, real expertise, zero tourist-trap energy. Booking again for Zanzibar.&rdquo;</p>
+              <div className={styles.trustMeta}>Daniel R. · Trustpilot</div>
+            </div>
           </div>
         </div>
       </section>

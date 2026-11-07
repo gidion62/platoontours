@@ -45,7 +45,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
   /* a little stagger so the row doesn't read as three identical boxes */
-  .card:nth-child(2) {
+  .card:nth-child(3n + 2) {
     transform: translateY(1.4rem);
   }
 }
@@ -65,7 +65,7 @@
   box-shadow: 0 26px 46px rgba(74, 63, 54, 0.3);
 }
 @media (min-width: 760px) {
-  .card:nth-child(2):hover {
+  .card:nth-child(3n + 2):hover {
     transform: translateY(calc(1.4rem - 6px));
   }
 }

@@ -3,9 +3,17 @@ import FallbackImage from '@/components/shared/FallbackImage';
 import experiences from '@/lib/experiences';
 import styles from './HomeExperiences.module.css';
 
-// Three hand-picked experiences shown on the homepage — change the slugs
+// Six hand-picked experiences shown on the homepage — change the slugs
 // here to feature different ones (they must exist in lib/experiences.js).
-const FEATURED = ['lake-eyasi', 'kikuletwa-hot-springs', 'materuni-waterfall-coffee'];
+// Each card links straight to its own section on the Experiences page.
+const FEATURED = [
+  'lake-eyasi',
+  'kikuletwa-hot-springs',
+  'materuni-waterfall-coffee',
+  'bush-dinners',
+  'night-game-drives',
+  'photography-safari',
+];
 
 export default function HomeExperiences() {
   const picks = FEATURED.map((slug) => experiences.find((x) => x.slug === slug)).filter(Boolean);

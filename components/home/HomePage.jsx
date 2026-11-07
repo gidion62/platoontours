@@ -10,6 +10,7 @@ import RevealOnMount from '@/components/shared/RevealOnMount';
 import FallbackImage from '@/components/shared/FallbackImage';
 import BookNowSlideshow from './BookNowSlideshow';
 import HomeExperiences from './HomeExperiences';
+import ReviewsMarquee from './ReviewsMarquee';
 
 export default function HomePage() {
   return (
@@ -208,24 +209,8 @@ export default function HomePage() {
       <section className={styles.trustSection}>
         <div className="section-inner reveal">
           <h2 className={styles.trustHeading}>What guests are saying</h2>
-          <div className={styles.trustGrid}>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;The founders themselves guided us — you can feel the difference in how they read the terrain and the animals.&rdquo;</p>
-              <div className={styles.trustMeta}>Sarah M. · Tripadvisor</div>
-            </div>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;Our honeymoon safari was unforgettable. Private sundowners on the crater rim, exactly as promised.&rdquo;</p>
-              <div className={styles.trustMeta}>James &amp; Priya K. · Google</div>
-            </div>
-            <div className={styles.trustCard}>
-              <div className={styles.stars}>★★★★★</div>
-              <p>&ldquo;Small group, real expertise, zero tourist-trap energy. Booking again for Zanzibar.&rdquo;</p>
-              <div className={styles.trustMeta}>Daniel R. · Trustpilot</div>
-            </div>
-          </div>
         </div>
+        <ReviewsMarquee />
       </section>
     </div>
   );

@@ -45,9 +45,10 @@
 .menu a {
   text-decoration: none;
   color: var(--ink);
-  opacity: 0.75;
+  opacity: 1;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(250, 247, 242, 0.9);
 }
 .menu a.active {
   opacity: 1;

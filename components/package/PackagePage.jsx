@@ -18,7 +18,7 @@ export default function PackagePage({ data, slug }) {
         {/* TODO: swap this h1 for the MaskedHeading reveal treatment used on other headings once that engine is ported (see components/shared/MaskedHeading) */}
         <h1 className="font-display">{d.title}</h1>
         <div className={styles.pkgHeroMeta}>
-          <span className={styles.pkgPriceBadge}>{d.price} / person</span>
+          <span className={styles.pkgPriceBadge}>{d.price}{/^from/i.test(d.price) ? ' / person' : ''}</span>
           {d.special && <span className={styles.pkgSpecialBadge}>Special Package</span>}
           {d.badge && <span className={styles.pkgSpecialBadge}>{d.badge}</span>}
         </div>

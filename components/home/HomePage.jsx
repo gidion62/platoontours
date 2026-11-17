@@ -63,7 +63,7 @@ export default function HomePage() {
       <section className={styles.carouselSection} id="packages">
         <div className="section-inner">
           <h2 className="reveal">Every safari, arranged around you.</h2>
-          <p className="reveal" style={{ color: 'var(--clay)', fontWeight: 600 }}>Browse our safari packages with the arrows.</p>
+          <p className="reveal" style={{ color: 'var(--clay)', fontWeight: 600 }}>.</p>
           <PackageCarousel />
         </div>
       </section>
